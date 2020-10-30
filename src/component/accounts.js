@@ -12,7 +12,7 @@ export default class AccountsComponent extends Component {
 
   componentDidMount() {
     const url1 = `http://127.0.0.1:30/getData`;
-    const url2 = `http://dummy.restapiexample.com/api/v1/employees`;
+    // const url2 = `http://dummy.restapiexample.com/api/v1/employees`;
 
     axios.get(url1)
       .then(response => {
@@ -35,7 +35,7 @@ export default class AccountsComponent extends Component {
           <tbody>
             {this.state.accounts.map(account => (
               <tr key={account.ACCNO}>
-                <td><a>{account.ACCNO}</a></td>
+                <td>{account.ACCNO}</td>
                 <td>{account.NO}</td>
               </tr>
             ))}
