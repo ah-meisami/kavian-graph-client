@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import './accounts-component.css';
 
 export default class AccountsComponent extends Component {
 	constructor(props) {
@@ -24,7 +25,7 @@ export default class AccountsComponent extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="AccountsComponent">
 				<table border="1">
 					<thead>
 						<tr>
