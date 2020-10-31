@@ -21,13 +21,13 @@ export default class AccountGraphComponent extends Component {
 
     axios.get(url1)
       .then(response => {
-        const nodes = response.data.rows;
+        const nodes = response.data;
         this.setState({ nodes });
       })
 
     axios.get(url2)
       .then(response => {
-        const edges = response.data.rows;
+        const edges = response.data;
         this.setState({ edges });
       })
   }
