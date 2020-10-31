@@ -1,10 +1,10 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { Component, createRef } from "react";
 import './account-graph-component.css';
 import { DataSet, Network } from 'vis';
 
-// import { nodes_offline } from './account-graph-component.data.nodes' // for offline testing
-// import { edges_offline } from './account-graph-component.data.nodes' // for offline testing
+import { nodes } from './account-graph-component.data.nodes' // for offline testing
+import { edges } from './account-graph-component.data.edges' // for offline testing
 
 export default class AccountGraphComponent extends Component {
 	constructor(props) {
@@ -21,6 +21,7 @@ export default class AccountGraphComponent extends Component {
   }
 
   componentDidMount() {
+  /*
     const url1 = `http://127.0.0.1:30/getNode?accNo=${this.props.accNo}`;
     const url2 = `http://127.0.0.1:30/getEdge?accNo=${this.props.accNo}`;
 
@@ -37,13 +38,9 @@ export default class AccountGraphComponent extends Component {
             const edges = response.data;
             this.setState({ edges });
 
-            // for offline testing
-            // const vis_nodes = new DataSet(nodes_offline);
-            // const vis_edges = new DataSet(edges_offline);
-
             // initialize network using API!
-            const vis_nodes = new DataSet(this.state.nodes);
-            const vis_edges = new DataSet(this.state.edges);
+            // const vis_nodes = new DataSet(this.state.nodes);
+            // const vis_edges = new DataSet(this.state.edges);
 
             const vis_data = {
               nodes: vis_nodes,
@@ -56,6 +53,20 @@ export default class AccountGraphComponent extends Component {
 
           })
       });
+      */
+
+      // for offline testing
+      const vis_nodes = new DataSet(nodes);
+      const vis_edges = new DataSet(edges);
+
+      const vis_data = {
+        nodes: vis_nodes,
+        edges: vis_edges
+      };
+
+      const vis_options = {};
+
+      this.network = new Network(this.appRef.current, vis_data, vis_options);
   }
 
 	render() {
