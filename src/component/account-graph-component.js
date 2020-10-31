@@ -1,6 +1,10 @@
 import axios from 'axios';
-import React, { Component } from 'react';
+import React, { Component, createRef } from "react";
 import './account-graph-component.css';
+import { DataSet, Network } from 'vis';
+
+// import { nodes_offline } from './account-graph-component.data.nodes' // for offline testing
+// import { edges_offline } from './account-graph-component.data.nodes' // for offline testing
 
 export default class AccountGraphComponent extends Component {
 	constructor(props) {
@@ -10,6 +14,10 @@ export default class AccountGraphComponent extends Component {
       nodes: [],
       edges: []
     };
+
+
+    this.network = {};
+    this.appRef = createRef();
   }
 
   componentDidMount() {
@@ -23,19 +31,38 @@ export default class AccountGraphComponent extends Component {
       .then(response => {
         const nodes = response.data;
         this.setState({ nodes });
-      })
 
-    axios.get(url2)
-      .then(response => {
-        const edges = response.data;
-        this.setState({ edges });
-      })
+        axios.get(url2)
+          .then(response => {
+            const edges = response.data;
+            this.setState({ edges });
+
+            // for offline testing
+            // const vis_nodes = new DataSet(nodes_offline);
+            // const vis_edges = new DataSet(edges_offline);
+
+            // initialize network using API!
+            const vis_nodes = new DataSet(this.state.nodes);
+            const vis_edges = new DataSet(this.state.edges);
+
+            const vis_data = {
+              nodes: vis_nodes,
+              edges: vis_edges
+            };
+
+            const vis_options = {};
+
+            this.network = new Network(this.appRef.current, vis_data, vis_options);
+
+          })
+      });
   }
 
 	render() {
 		return (
       <div className="AccountGraphComponent">
-        {this.props.accNo}
+         {this.props.accNo}
+        <div ref={this.appRef} style={{ width: '100%', height: '400px', border: '1px solid black', align:'center'}} />
 			</div>
 		);
 	}
