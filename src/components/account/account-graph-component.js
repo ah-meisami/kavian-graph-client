@@ -53,6 +53,17 @@ export default class AccountGraphComponent extends Component {
 						const vis_options = {};
 
 						this.network = new Network(this.appRef.current, vis_data, vis_options);
+
+						this.network.on( 'click', (properties) => {
+							// console.log('clicked node ' + properties.nodes);
+							if (properties.nodes.length > 0) {
+								const selectedNodeId = properties.nodes[0];
+								const nodesSearchedById = this.state.nodes.filter(obj => { return obj.id === selectedNodeId });
+								if (nodesSearchedById.length > 0) {
+									console.log(nodesSearchedById[0].label)
+								}
+							}
+						});
 					});
 				});
 

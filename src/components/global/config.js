@@ -14,7 +14,7 @@ module.exports = global.config = {
 		},
 		numOfRelatedAccounts: {
 			en: 'numOfRelatedAccounts',
-			fa: 'تعداد نود'
+			fa: 'تعداد یال'
 		}
 		// rest of your translation object
 	}
