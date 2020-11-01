@@ -32,7 +32,7 @@ export default class AccountListComponent extends Component {
 
 	render() {
 		return (
-			<div className="AccountsComponent">
+			<div className="AccountListComponent">
 				<table border="1">
 					<thead>
 						<tr>
