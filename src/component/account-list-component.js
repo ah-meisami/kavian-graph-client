@@ -26,6 +26,10 @@ export default class AccountListComponent extends Component {
     this.setState({ accounts }); // for offline testing
   }
 
+  handleClick = (accNo)=>{
+    console.log(accNo)
+  }
+
 	render() {
 		return (
 			<div className="AccountsComponent">
@@ -38,7 +42,7 @@ export default class AccountListComponent extends Component {
           </thead>
           <tbody>
             {this.state.accounts.map(account => (
-              <tr key={account.ACCNO}>
+              <tr key={account.ACCNO}  onClick={()=>this.handleClick(account.ACCNO)}>
                 <td>{account.ACCNO}</td>
                 <td>{account.NO}</td>
               </tr>
