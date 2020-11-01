@@ -1,5 +1,9 @@
 module.exports = global.config = {
 	i18n: {
+		rowNo: {
+			en: 'rowNo',
+			fa: 'ردیف'
+		},
 		welcome: {
 			en: 'Welcome',
 			fa: 'خوش آمدید'

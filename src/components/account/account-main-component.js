@@ -12,16 +12,15 @@ export default class AccountMainComponent extends Component {
 		this.getData = this.getData.bind(this);
 
     this.state = {
-      accNo: "0200194051004"
-    };
+      accNo: ''
+		};
   }
 
 	getData(val) {
-    // do not forget to bind getData in constructor
-		console.log('parent', val);
-
-
-		this.setState({accNo: val},() => { console.log('salam', this.state.accNo); });
+		// do not forget to bind getData in constructor
+		if (val !== 'accNo') {
+			this.setState({ accNo: val }, () => { console.log('parent', this.state.accNo); });
+		}
 	}
 
 	render() {
