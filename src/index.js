@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MainLayoutComponent from './component/main-layout-component';
+import AccountMainComponent from './components/account/account-main-component';
 
 ReactDOM.render(
   <React.StrictMode>
-      <MainLayoutComponent/>
+      <AccountMainComponent />
   </React.StrictMode>,
   document.getElementById('root')
 );

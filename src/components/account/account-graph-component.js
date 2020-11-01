@@ -1,10 +1,10 @@
 // import axios from 'axios';
 import React, { Component, createRef } from "react";
-import './account-graph-component.style.css';
+import './account-graph.style.css';
 import { DataSet, Network } from 'vis';
 
-import { nodes } from './account-graph-component.data.nodes' // for offline testing
-import { edges } from './account-graph-component.data.edges' // for offline testing
+import { nodes } from './account-graph.data.nodes' // for offline testing
+import { edges } from './account-graph.data.edges' // for offline testing
 
 export default class AccountGraphComponent extends Component {
 	constructor(props) {
@@ -71,7 +71,7 @@ export default class AccountGraphComponent extends Component {
 
 	render() {
 		return (
-      <div className="AccountGraphComponent">
+      <div className="account-graph">
          {this.props.accNo}
         <div ref={this.appRef} style={{ width: '800px', height: '700px', border: '1px solid black', align:'center'}} />
 			</div>

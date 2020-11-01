@@ -1,10 +1,10 @@
 // import axios from 'axios';
 import React, { Component } from 'react';
-import './account-list-component.style.css';
-import { accounts } from './account-list-component.data' // for offline testing
-import './global/config';
+import './account-grid.style.css';
+import { accounts } from './account-grid.data' // for offline testing
+import '../global/config';
 
-export default class AccountListComponent extends Component {
+export default class AccountGridComponent extends Component {
 	constructor(props) {
 		super(props);
 
@@ -24,15 +24,18 @@ export default class AccountListComponent extends Component {
     //   })
 
     this.setState({ accounts }); // for offline testing
+    this.props.sendData("accNo"); //MOHEM===MOHEM===MOHEM===MOHEM===MOHEM===MOHEM===MOHEM===MOHEM
+
   }
 
   handleClick = (accNo)=>{
-    console.log(accNo)
+    console.log('child',accNo);
+    this.props.sendData(accNo);
   }
 
 	render() {
 		return (
-			<div className="AccountListComponent">
+			<div className="account-grid">
 				<table border="1">
 					<thead>
 						<tr>
