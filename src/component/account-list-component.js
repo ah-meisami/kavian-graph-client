@@ -1,10 +1,10 @@
 // import axios from 'axios';
 import React, { Component } from 'react';
-import './accounts-component.style.css';
-import { accounts } from './accounts-component.data' // for offline testing
+import './account-list-component.style.css';
+import { accounts } from './account-list-component.data' // for offline testing
 import './global/config';
 
-export default class AccountsComponent extends Component {
+export default class AccountListComponent extends Component {
 	constructor(props) {
 		super(props);
 
