@@ -1,18 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-import AccountsComponent from './component/accounts-component';
-// import AccountGraphComponent from './component/account-graph-component';
-// import VisNetwork from './component/samples/VisNetwork'
 import reportWebVitals from './reportWebVitals';
+import MainLayoutComponent from './component/main-layout-component';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <AccountsComponent />
-    {/* <AccountGraphComponent accNo="0201894993002" /> */}
-    {/* <VisNetwork/> */}
+      <MainLayoutComponent/>
   </React.StrictMode>,
   document.getElementById('root')
 );
