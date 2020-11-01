@@ -10,18 +10,25 @@ export default class AccountMainComponent extends Component {
 		super(props);
 
 		this.getData = this.getData.bind(this);
+
+    this.state = {
+      accNo: "0200194051004"
+    };
   }
 
 	getData(val) {
     // do not forget to bind getData in constructor
-    console.log('parent',val);
+		console.log('parent', val);
+
+
+		this.setState({accNo: val},() => { console.log('salam', this.state.accNo); });
 	}
 
 	render() {
 		return (
 			<div className="account-main">
         <AccountGridComponent sendData={this.getData}/>
-        <AccountGraphComponent accNo="0201894993002" />
+        <AccountGraphComponent accNo={this.state.accNo} />
 			</div>
 		);
 	}
