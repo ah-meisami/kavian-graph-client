@@ -1,4 +1,5 @@
 .MainLayoutComponent {
   font-family: 'Vazir';
   text-align: center;
+  display: flex;
 }

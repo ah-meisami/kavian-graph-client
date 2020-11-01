@@ -5,12 +5,12 @@ module.exports = global.config = {
 			fa: 'خوش آمدید'
 		},
 		accountNo: {
-			en: 'Welcome',
+			en: 'accountNo',
 			fa: 'شماره حساب'
 		},
 		numOfRelatedAccounts: {
-			en: 'Welcome',
-			fa: 'تعداد حساب وابسته'
+			en: 'numOfRelatedAccounts',
+			fa: 'تعداد نود'
 		}
 		// rest of your translation object
 	}

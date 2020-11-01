@@ -73,7 +73,7 @@ export default class AccountGraphComponent extends Component {
 		return (
       <div className="AccountGraphComponent">
          {this.props.accNo}
-        <div ref={this.appRef} style={{ width: '100%', height: '400px', border: '1px solid black', align:'center'}} />
+        <div ref={this.appRef} style={{ width: '800px', height: '700px', border: '1px solid black', align:'center'}} />
 			</div>
 		);
 	}
