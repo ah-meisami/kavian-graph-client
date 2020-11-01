@@ -1,8 +1,8 @@
 // import axios from 'axios';
 import React, { Component } from 'react';
 import './accounts-component.style.css';
-
 import { accounts } from './accounts-component.data' // for offline testing
+import './global/config';
 
 export default class AccountsComponent extends Component {
 	constructor(props) {
@@ -32,8 +32,8 @@ export default class AccountsComponent extends Component {
 				<table border="1">
 					<thead>
 						<tr>
-							<th>شماره حساب</th>
-							<th>تعداد نود وابسته</th>
+							<th>{global.config.i18n.accountNo.fa}</th>
+							<th>{global.config.i18n.numOfRelatedAccounts.fa}</th>
 						</tr>
           </thead>
           <tbody>
