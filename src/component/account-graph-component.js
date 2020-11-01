@@ -1,6 +1,6 @@
 // import axios from 'axios';
 import React, { Component, createRef } from "react";
-import './account-graph-component.css';
+import './account-graph-component.style.css';
 import { DataSet, Network } from 'vis';
 
 import { nodes } from './account-graph-component.data.nodes' // for offline testing

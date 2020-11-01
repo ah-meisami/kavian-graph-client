@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-// import AccountsComponent from './component/accounts-component';
+import AccountsComponent from './component/accounts-component';
 import AccountGraphComponent from './component/account-graph-component';
 // import VisNetwork from './component/samples/VisNetwork'
 import reportWebVitals from './reportWebVitals';
@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    {/* <AccountsComponent /> */}
+    <AccountsComponent />
     <AccountGraphComponent accNo="0201894993002" />
     {/* <VisNetwork/> */}
   </React.StrictMode>,
