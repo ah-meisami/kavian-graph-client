@@ -50,16 +50,11 @@ export default class AccountGraphComponent extends Component {
 							edges: vis_edges
 						};
 
-						// const vis_options = {};
-
-
-
-						var vis_options = {
+						const vis_options = {
 							nodes: {
 								// shape: 'dot',
 								// size: 15,
 								// color: '#ECBF26', // select color
-
 								font: {
 									// size: 16,
 									// color: '#ffffff',
