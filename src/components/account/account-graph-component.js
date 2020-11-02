@@ -22,6 +22,7 @@ export default class AccountGraphComponent extends Component {
 	}
 
 	componentDidUpdate() {
+		// console.log(`========= ${this.state.nodes.length}`)
 		if (
 			this.props.accNo !== '' &&
 			this.props.accNo !== null &&
@@ -35,12 +36,20 @@ export default class AccountGraphComponent extends Component {
 				console.log(url2);
 
 				axios.get(url1).then((response) => {
-					const nodes = response.data;
-					this.setState({ nodes });
+					let curr_nodes = response.data;
+					let prev_nodes = [...this.state.nodes];
+					let curr_prev_nodes = [...prev_nodes, ...curr_nodes];
+					let uniq = {}
+					let uniq_curr_prev_nodes = curr_prev_nodes.filter(obj => !uniq[obj.id] && (uniq[obj.id] = true));;
+					this.setState({ nodes: uniq_curr_prev_nodes });
 
 					axios.get(url2).then((response) => {
-						const edges = response.data;
-						this.setState({ edges });
+						let curr_edges = response.data;
+						let prev_edges = [...this.state.edges];
+						let curr_prev_edges = [...prev_edges, ...curr_edges];
+						let uniq = {}
+						let uniq_curr_prev_edges = curr_prev_edges.filter(obj => !uniq[obj.id] && (uniq[obj.id] = true));;
+						this.setState({ edges: uniq_curr_prev_edges });
 
 						// initialize network using API!
 						const vis_nodes = new DataSet(this.state.nodes);
@@ -53,7 +62,7 @@ export default class AccountGraphComponent extends Component {
 
 						const vis_options = {
 							physics: {
-								enabled: true
+								enabled: false
 							},
 							nodes: {
 								// shape: 'dot',
