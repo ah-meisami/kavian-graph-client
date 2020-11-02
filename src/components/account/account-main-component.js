@@ -2,6 +2,7 @@ import '../global/config';
 import React, { Component } from 'react';
 import AccountGridComponent from './account-grid-component';
 import AccountGraphComponent from './account-graph-component';
+import AccountOptionComponent from './account-option-component';
 import './account-main.style.css';
 
 
@@ -27,7 +28,8 @@ export default class AccountMainComponent extends Component {
 		return (
 			<div className="account-main">
         <AccountGridComponent sendData={this.getData}/>
-        <AccountGraphComponent accNo={this.state.accNo} sendData={this.getData}/>
+				<AccountGraphComponent accNo={this.state.accNo} sendData={this.getData} />
+				<AccountOptionComponent />
 			</div>
 		);
 	}
