@@ -19,7 +19,6 @@ export default class AccountGridComponent extends Component {
     axios.get(url1)
       .then(response => {
         const accounts = response.data;
-        console.log(accounts)
         this.setState({ accounts });
       })
 
@@ -29,9 +28,9 @@ export default class AccountGridComponent extends Component {
     */
   }
 
-  handleClick = (accNo)=>{
-    console.log('child',accNo);
-    this.props.sendData(accNo);
+  handleClick = (selectedNodeAccNo)=>{
+    console.log('selectedNodeAccNo', selectedNodeAccNo);
+    this.props.sendData(selectedNodeAccNo);
   }
 
 	render() {

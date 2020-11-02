@@ -50,17 +50,36 @@ export default class AccountGraphComponent extends Component {
 							edges: vis_edges
 						};
 
-						const vis_options = {};
+						// const vis_options = {};
+
+
+
+						var vis_options = {
+							nodes: {
+								// shape: 'dot',
+								// size: 15,
+								// color: '#ECBF26', // select color
+
+								font: {
+									// size: 16,
+									// color: '#ffffff',
+									face: 'Vazir'
+								},
+								// borderWidth: 2
+							}
+						};
 
 						this.network = new Network(this.appRef.current, vis_data, vis_options);
 
+						//find selected node accNo by id and then pass it to parent to regenerate the graph
 						this.network.on( 'click', (properties) => {
-							// console.log('clicked node ' + properties.nodes);
 							if (properties.nodes.length > 0) {
 								const selectedNodeId = properties.nodes[0];
 								const nodesSearchedById = this.state.nodes.filter(obj => { return obj.id === selectedNodeId });
 								if (nodesSearchedById.length > 0) {
-									console.log(nodesSearchedById[0].label)
+									const selectedNodeAccNo = nodesSearchedById[0].label;
+									console.log('selectedNodeAccNo', selectedNodeAccNo);
+									this.props.sendData(selectedNodeAccNo);
 								}
 							}
 						});

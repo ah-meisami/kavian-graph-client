@@ -27,7 +27,7 @@ export default class AccountMainComponent extends Component {
 		return (
 			<div className="account-main">
         <AccountGridComponent sendData={this.getData}/>
-        <AccountGraphComponent accNo={this.state.accNo} />
+        <AccountGraphComponent accNo={this.state.accNo} sendData={this.getData}/>
 			</div>
 		);
 	}
