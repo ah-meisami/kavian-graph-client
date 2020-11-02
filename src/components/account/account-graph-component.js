@@ -60,24 +60,7 @@ export default class AccountGraphComponent extends Component {
 							edges: vis_edges
 						};
 
-						const vis_options = {
-							physics: {
-								enabled: false
-							},
-							nodes: {
-								// shape: 'dot',
-								// size: 15,
-								// color: '#ECBF26', // select color
-								font: {
-									// size: 16,
-									// color: '#ffffff',
-									face: 'Vazir'
-								},
-								// borderWidth: 2
-							}
-						};
-
-						this.network = new Network(this.appRef.current, vis_data, vis_options);
+						this.network = new Network(this.appRef.current, vis_data, this.props.visOptions);
 
 						//find selected node accNo by id and then pass it to parent to regenerate the graph
 						this.network.on( 'click', (properties) => {
@@ -114,18 +97,7 @@ export default class AccountGraphComponent extends Component {
 
 	render() {
 		return (
-			<div className="account-graph">
-				{this.props.accNo}
-				<div
-					ref={this.appRef}
-					style={{
-						width: '1000px',
-						height: '750px',
-						border: '1px solid black',
-						align: 'center'
-					}}
-				/>
-			</div>
+			<div ref={this.appRef} className='account-graph'/>
 		);
 	}
 }

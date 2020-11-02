@@ -11,9 +11,11 @@ export default class AccountMainComponent extends Component {
 		super(props);
 
 		this.getData = this.getData.bind(this);
+		this.getOptions = this.getOptions.bind(this);
 
     this.state = {
-      accNo: ''
+			accNo: '',
+			visOptions: {},
 		};
   }
 
@@ -24,12 +26,23 @@ export default class AccountMainComponent extends Component {
 		}
 	}
 
+	getOptions(visOptions) {
+		// do not forget to bind getData in constructor
+		this.setState({ visOptions});
+	}
+
 	render() {
 		return (
 			<div className="account-main">
-        <AccountGridComponent sendData={this.getData}/>
-				<AccountGraphComponent accNo={this.state.accNo} sendData={this.getData} />
-				<AccountOptionComponent />
+				<div>
+					<AccountGridComponent sendData={this.getData} />
+				</div>
+				<div>
+					<AccountGraphComponent accNo={this.state.accNo} sendData={this.getData} visOptions={this.state.visOptions} />
+				</div>
+				<div>
+					<AccountOptionComponent sendOptions={this.getOptions}/>
+				</div>
 			</div>
 		);
 	}

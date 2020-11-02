@@ -1,4 +1,6 @@
 .account-graph {
-  font-family: 'Vazir';
-  text-align: center;
+	text-align: center;
+	width: 500px;
+	height: 750px;
+	border: 1px solid black;
 }
