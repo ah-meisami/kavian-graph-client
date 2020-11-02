@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component, createRef } from 'react';
 import './account-graph.style.css';
 import { DataSet, Network } from 'vis';
+import '../global/config';
 
 // import { nodes } from './account-graph.data.nodes' // for offline testing
 // import { edges } from './account-graph.data.edges' // for offline testing
@@ -27,8 +28,8 @@ export default class AccountGraphComponent extends Component {
 			this.props.accNo !== this.state.accNo
 		) {
 			this.setState({ accNo: this.props.accNo }, () => {
-				const url1 = `http://127.0.0.1:30/getNode?accNo=${this.props.accNo}`;
-				const url2 = `http://127.0.0.1:30/getEdge?accNo=${this.props.accNo}`;
+				const url1 = `${global.config.apiURL}/getNode?accNo=${this.props.accNo}`;
+				const url2 = `${global.config.apiURL}/getEdge?accNo=${this.props.accNo}`;
 
 				console.log(url1);
 				console.log(url2);
@@ -51,6 +52,9 @@ export default class AccountGraphComponent extends Component {
 						};
 
 						const vis_options = {
+							physics: {
+								enabled: true
+							},
 							nodes: {
 								// shape: 'dot',
 								// size: 15,
@@ -106,8 +110,8 @@ export default class AccountGraphComponent extends Component {
 				<div
 					ref={this.appRef}
 					style={{
-						width: '800px',
-						height: '700px',
+						width: '1000px',
+						height: '750px',
 						border: '1px solid black',
 						align: 'center'
 					}}

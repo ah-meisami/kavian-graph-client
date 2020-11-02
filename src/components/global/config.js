@@ -17,6 +17,7 @@ module.exports = global.config = {
 			fa: 'تعداد یال'
 		}
 		// rest of your translation object
-	}
+	},
 	// other global config variables you wish
+	apiURL: 'http://192.168.234.77:30',
 };

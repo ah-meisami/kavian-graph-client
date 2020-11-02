@@ -14,7 +14,7 @@ export default class AccountGridComponent extends Component {
   }
 
   componentDidMount() {
-    const url1 = `http://127.0.0.1:30/getData`;
+    const url1 = `${global.config.apiURL}/getData`;
 
     axios.get(url1)
       .then(response => {
