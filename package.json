@@ -12,6 +12,7 @@
     "react-json-editor-viewer": "^1.0.7",
     "react-json-view": "^1.19.1",
     "react-scripts": "4.0.0",
+    "react-sliding-pane": "^6.1.2",
     "vis": "^4.21.0-EOL",
     "vis-network": "^8.5.2",
     "web-vitals": "^0.2.4"
