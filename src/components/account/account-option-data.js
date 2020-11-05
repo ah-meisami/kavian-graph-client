@@ -1,16 +1,11 @@
-export const vis_options = {
-	physics: {
-		enabled: false
+export const localOption ={
+	"physics": {
+		"enabled": false
 	},
-	nodes: {
-		// shape: 'dot',
-		// size: 15,
-		// color: '#ECBF26', // select color
-		font: {
-			// size: 16,
-			// color: '#ffffff',
-			face: 'Vazir'
+	"nodes": {
+		"font": {
+			"face": "Vazir"
 		},
-		borderWidth: 2
+		"borderWidth": 2
 	}
 };
